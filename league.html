@@ -1,0 +1,104 @@
+
+<html>
+
+<style>
+
+.leaguetable table{
+border:1px solid black;
+border-bottom:none;
+margin-top:1cm;
+}
+.leaguetable table tr{
+border:1px solid black;
+}
+.leaguetable table td,th{
+border:1px solid black;
+border-left:none;
+border-top:none;
+}
+
+
+</style>
+
+
+<body>
+<style>
+.navbar ul li{
+display:inline-block;
+margin:0 10px;
+
+
+}
+.navbar img{
+float:left;
+width:15%;
+border-radius:1cm;
+}
+
+.navbar ul{
+float:left;
+margin-right:05%;
+position:relative;
+}
+.navbar a{
+color:black;
+text-decoration:none;
+border:1px solid white;
+border-radius:10px;
+padding:2px;
+}
+.navbar a:hover{
+border:1px solid blue;
+background:blue;
+color:white;
+}
+</style>
+
+
+
+<div class='navbar'>
+<img src='0c962934d5bd16b9c91cdf9f08e3b203.jpg' id='logo'>
+<ul> 
+
+
+<li><a href='#'>Home</a></li>
+<li><a href='#'>Points</a></li>
+<li><a href='#'>League</a></li>
+<li><a href='#'>Coins</a></li>
+<li><a href='#'>Username</a></li>
+<li><a href='#'>Settings</a></li>
+
+</ul>
+
+</div>
+<hr>
+<div class='leaguetable' >
+
+
+<table>
+<tr><th>Team Name</th><th>Points</th></tr>
+<tr><td>1. Masquody</td> <td>10</td></tr>
+<tr><td>2. Milanos</td>  <td>9</td></tr>
+<tr><td>3. Onetouch</td> <td>8</td></tr>
+<tr><td>4. Payern</td>   <td>7</td></tr>
+</table>
+
+
+
+<table>
+<tr> <th>Team Name</th> <th>Points</th> </tr>
+{%for team in teams%}
+<tr><td>{{team[0]}}</td><td>{{team[1]}}</td></tr>
+{%endfor%}
+
+<!-- Team[0] is teamname while team[1] is points -->
+
+</table>
+
+</div>
+
+
+
+</body>
+
+</html
