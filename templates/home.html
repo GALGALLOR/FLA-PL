@@ -1,11 +1,4 @@
-<!--
-<li><a href='#'>Home</a></li>
-<li><a href='#'>Points</a></li>
-<li><a href='#'>League</a></li>
-<li><a href='#'>Coins</a></li>
-<li><a href='#'>{{Username}}</a></li>
-<li><a href='#'>Settings</a></li>
--->
+
 <style>
     .others a:hover{
         background:lightpink;
@@ -163,47 +156,49 @@
 
 <html>
     <head>
-        <link rel="icon" href="FLA logo.png">
+        <link rel="icon" href="{{url_for('static', filename='FLA logo.png')}}">
     </head>
     <body>
         <div class="navbar">
             <ul>
                 <span class="logo">
-                    <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
+                    <a href="/home"><img src="{{url_for('static', filename='FLA logo.png')}}" alt="Logo"></a>
                 </span>
                 <span class="others">
-                    <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
-                    <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
-                    <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
-                    <li><a href="transfers.html"> <img src="coins.png" alt=""> Coins</a></li>
-                    <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
-                    <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
+                    <li> <a href="home"> <img src="{{url_for('static', filename='home.png')}}" alt="">  Home</a></li>
+                    <li><a href="/team"> <span id='score'> {{points}} </span> points</a></li>
+                    <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
+                    <li><a href="/transfers"> <img src="{{url_for('static', filename='coins.png')}}" alt=""> Coins</a></li>
+                    <li><a href="/accounts"> <img src="{{url_for('static', filename='username.png')}}" alt=""> {{username}}</a></li>
+                    <li><a href="/settings"> <img src="{{url_for('static', filename='settings.png')}}" alt=""> settings</a></li>
                 </span>
             </ul>
         </div>
         <div class="container">
 
             <div class="update">
+                {%for my in my%}
                 <div class="date">
-                    <span id='date' ></span>
+                    <span id='date' >{{my[3]}}</span>
                 </div>
                 <div class="news">
-                    <h1>{{title}}</h1>
+                    <h1>{{my[2]}}</h1>
                 </div>
                 <span class='image' >
-                <img  onmouseover="on()" onmouseout="off()"  id='{{img}}' src="{{img}}" alt=""></span>
+                <img  onmouseover="on()" onmouseout="off()"  id='{{my[0]}}' src="{{my[0]}}" alt=""></span>
                 <script>
                     function on(){
-                        document.getElementById('{{img}}').src="{{img2}}";
+                        document.getElementById('{{my[0]}}').src="{{my[1]}}";
                     }
                     function off(){
-                        document.getElementById('{{img2}}').src='{{img}}';
+                        document.getElementById('{{my[0]}}').src='{{my[0]}}';
                         
                     }
 
-                    document.getElementById("date").innerHTML = '{{date}}';
+                    document.getElementById("date").innerHTML = '{{my[3]}}';
                 </script>
                 <hr>
+                {%endfor%}
 
 
 
@@ -222,7 +217,7 @@
                 <label><span class='setty' id='Nyati' >Nyati</span></label></h3>
                 <br><br>
                 <div class="date">
-                    <span id='date'>{{date}}</span>
+                    <span id='date'>{{my[3]}}</span>
                 
                 <br>
                 <br>
@@ -232,9 +227,9 @@
 
                 <br>
                 <div class="results">
-                {{team1}} | <span class='hk' >{{team1score}}</span> - <span class='hk' >{{team2score}}</span> | {{team2}}<br><br>
-                {{team3}} | <span class='hk' >{{team3score}}</span> - <span class='hk' >{{team4score}}</span> | {{team4}}<br><br>
-                {{team5}} | <span class='hk' >{{team5score}}</span> - <span class='hk' >{{team6score}}</span> | {{team6}}<br><br>
+                    {%for sl in xli%}
+                {{sl[0]}} | <span class='hk' >{{sl[1]}}</span> - <span class='hk' >{{sl[3]}}</span> | {{sl[2]}}<br><br>
+                {%endfor%}
                 </div>
             </div>
         </div>

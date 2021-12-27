@@ -59,6 +59,9 @@ padding:10px;
 *{
     text-transform: uppercase;
 }
+input{
+    text-transform: none;
+}
 #xd:hover{
     color:red;
     cursor: pointer;
@@ -66,11 +69,15 @@ padding:10px;
 button{
     cursor: pointer;
 }
-
+.message{
+    color:red;
+    font-family: cursive;
+}
 
 
 </style>
 <body>
+
 <div class="logo">
     <img src="FLA logo.png" alt=""><br><br><br>
     <span class='welcome' >WELCOME TO:<br> <div class="fla">
@@ -83,7 +90,12 @@ button{
 
 <center>
 <form method='post'>
+    <div class="message">
+        {%if message%}
 
+        !!{{message}}!!
+        {%endif%}
+    </div>
 <label>username/email</label>
 <input name='username' required placeholder='username or email' type='text'>
 <br><br>
@@ -111,7 +123,7 @@ button{
         <label>Password</label><input required type='password' name='password' placeholder='********'><br><br>
         <label>Phone number</label><input required type='number' name='phone' placeholder='+254________'><br><br>
         <label id='xd' onclick='login()' >Back to login?</label>
-        <button name='signup' value='signup' id='submit'>Signup</button>
+        <button name='login' value='signup' id='submit'>Signup</button>
         </form>
         </div>
         </center>
