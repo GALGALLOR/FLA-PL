@@ -1,0 +1,239 @@
+<!--
+<li><a href='#'>Home</a></li>
+<li><a href='#'>Points</a></li>
+<li><a href='#'>League</a></li>
+<li><a href='#'>Coins</a></li>
+<li><a href='#'>{{Username}}</a></li>
+<li><a href='#'>Settings</a></li>
+-->
+<style>
+    .others a:hover{
+        background:lightpink;
+        border:1px solid lightcyan;
+    }
+    .logo img:hover{
+        border-radius: 1cm;
+
+    }
+    .logo img{
+        border-radius: 1cm;
+        transition: 1s;
+        width:70%;
+        height:20vh;
+        border:1px solid lightcyan;
+        margin-left:0;
+        left:10%;
+        position: absolute;
+    }
+    .navbar li{
+        list-style-type: none;
+        display:block;
+        margin-left: 0;
+        width:100%;
+        margin-top:1cm;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    }
+    .navbar ul{
+        width:100%;
+        margin-left:0;
+        left:-20;
+        position: absolute;
+    }
+    .navbar a{
+        padding:5px;  
+        text-decoration: none;
+        padding-left:1cm;
+        border:1px solid lightcyan;     
+        border-radius: 0.5cm;
+        transition: 0.5s;
+        width:100%;
+        padding-top:0.2cm;
+    }
+    .navbar{
+        background:lightcyan;
+        font-size: larger;
+        float:left;
+        position:fixed;
+        width:6cm;
+        height:100vh;
+    }
+    .others{
+        position:absolute;
+        top:4cm;
+    }
+    .others a{
+        margin-bottom:1cm;
+        position: relative;
+    }
+    .others li img{
+        width:0.7cm;
+ 
+    }
+    #league,#score{
+        border:1px solid black;
+    }
+
+    .container{
+        position: absolute;
+        left:6cm;
+        padding-top:1cm;
+        padding-left:1cm;
+        width:50%;
+        transition: 1s;
+        margin-top:3cm;
+    }
+    .container2{
+        float:right;
+        background:rgb(126, 226, 218);
+        width:50%;
+        padding:1cm;
+        position:absolute;
+        right:-60%;
+        top:0;
+        transition: 1s;
+
+    }
+    .container2 .setty{
+        margin-left:0.5s;
+        border:1px solid black;
+        padding:5px;
+        border-radius:10px;
+
+    }
+    .container2 .setty:hover{
+        color:blue;
+        background: white;
+        width:100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    #simba{
+        background:red;
+        color:white;
+    }
+    #ndovu{
+        background:yellow;
+        color:white;
+
+    }
+    #nyati{
+        background:green;
+        color:white;
+        margin-left:0.2cm;
+    }
+    #chui {
+        background:blue;
+        color:white;
+    }
+    .container2 label{
+        margin-top:1cm;
+        position:relative;
+    }
+    .date{
+        text-decoration: underline;
+    }
+    .image img{
+        width:100%;
+        height:70vh;
+        transition: 1s;
+        animation: 1s;
+    }
+
+
+    
+
+
+</style>
+
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <span class="logo">
+                    <a href=""><img src="FLA logo.png" alt="Logo"></a>
+                </span>
+                <span class="others">
+                    <li> <a href="#"> <img src="home.png" alt="">  Home</a></li>
+                    <li><a href="#"> <span id='score'>35</span> points</a></li>
+                    <li><a href="#"> <span id='league' >609</span> League</a></li>
+                    <li><a href="#"> <img src="coins.png" alt=""> Coins</a></li>
+                    <li><a href="#"> <img src="username.png" alt=""> Galgallo</a></li>
+                    <li><a href="#"> <img src="settings.png" alt=""> settings</a></li>
+                </span>
+            </ul>
+        </div>
+        <div class="container">
+
+            <div class="update">
+                <div class="date">
+                    23/02/2022
+                </div>
+                <div class="news">
+                    <h1>🎉Spicy Keith scores a FreeKick banger🥂</h1>
+                </div>
+                <span class='image' >
+                <img  onmouseover="on()" onmouseout="off()"  id='kindpng_5757' src="kindpng_5855552.png" alt=""></span>
+                <script>
+                    function on(){
+                        document.getElementById('kindpng_57583').src="redcard.png";
+                    }
+                    function off(){
+                        document.getElementById('kindpng_57893').src='kindpng_5855552.png';
+                    }
+                </script>
+                <hr>
+                <div class="update">
+                    <div class="date">
+                        23/02/2022
+                    </div>
+                    <div class="news">
+                        <h1>🎉Spicy Keith scores a FreeKick banger🥂</h1>
+                    </div>
+                    <span class='image' >
+                    <img  onmouseover="on()" onmouseout="off()"  id='yes' src="kindpng_5855552.png" alt=""></span>
+                    <script>
+                        function on(){
+                            document.getElementById('yes').src="redcard.png";
+                        }
+                        function off(){
+                            document.getElementById('yes').src='kindpng_5855552.png';
+                        }
+                    </script>
+                    <hr>
+
+
+        </div>
+        <div class="container2">
+            <div class="games">
+                <br>
+                <h3>
+                <label><span class='setty' id='3A' >3A</span></label>
+                <label><span class='setty' id='3B' >3B</span></label>
+                <label><span class='setty' id='3C' >3C</span></label>
+                <label><span class='setty' id='3D' >3D</span></label>
+                <label><span class='setty' id='3E' >3E</span><br><br></label>
+                <label><span class='setty' id='Simba' >Simba</span></label>
+                <label><span class='setty' id='Ndovu' >Ndovu</span></label>
+                <label><span class='setty' id='Chui' >Chui </span></label>
+                <label><span class='setty' id='Nyati' >Nyati</span></label></h3>
+                <br><br>
+                <div class="date">
+                    22/02/2022
+                
+                <br>
+                <br>
+                THIS WEEK
+            </div>
+                <br>
+
+                <br>
+                3A |3-0| 3C<br><br>
+                3D |5-1| 3E<br><br>
+                Ndovu |2-0| Nyati<br><br>
+            </div>
+        </div>
+    </body>
+</html>
