@@ -1,18 +1,22 @@
 
 <html>
 <head>
-
+    <link rel="icon" href="FLA logo.png">
 </head>
 <style>
 
 
 h1{
-margin-top:10%;
+margin-top:4%;
 }
 
-.textbox{
+.textbox,.signup{
 padding:0;
-margin-top:10%;
+margin-top:1%;
+border:1px solid black;
+width:50%;
+margin-left:25%;
+padding:1cm;
 }
 body{
 background:lightblue;
@@ -22,18 +26,61 @@ input{
 background:none;
 border:2px solid white;
 border-radius:1px;
+padding:10px;
 }
 #submit{
 background:white;
 padding:10px;
 }
+.logo img{
+    width:5cm;
+    text-align: center;
+    margin-left:30%;
+}
+.logo {
+    margin-left: 4cm;
+}
+.welcome{
+    margin-left:35%;
+}
+.fla{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    color:grey;
+}
+#nn,#xd{
+    text-decoration: underline;
+
+}
+#nn:hover{
+    color:red;
+    cursor: pointer;
+}
+*{
+    text-transform: uppercase;
+}
+#xd:hover{
+    color:red;
+    cursor: pointer;
+}
+button{
+    cursor: pointer;
+}
+
+
 
 </style>
 <body>
-
+<div class="logo">
+    <img src="FLA logo.png" alt=""><br><br><br>
+    <span class='welcome' >WELCOME TO:<br> <div class="fla">
+        LIGHT ACADEMY FANTASY PREMIER LEAGUE
+    </div> </span>
+</div>
+<div id='login' class='textbox'>
 <h1><center><u>login</u></center></h1>
 
-<div class='textbox'>
+
 <center>
 <form method='post'>
 
@@ -43,11 +90,54 @@ padding:10px;
 <label>password</label>
 <input name='password' required placeholder='********' type='password'>
 <br><br>
-<button value='submit' name='submit' id='submit' >submit</button>
+<div>
+    <label id='nn'  onclick='signup()' for="signup">Sign Up?</label><br><br>
+</div>
+<button value='login' name='login' id='submit' >Login</button>
 </form>
 
 </center>
 </div>
+        
+
+        <div style='display:none;' id='hhv' class="signup">
+        
+        <center><u><h1>Sign Up</h1></u>
+        <div class="box">
+        <form method=post>
+        
+        <label>Username</label><input required type='text' name='username' placeholder='enter username'><br><br>
+        <label>Email</label><input required type='email' name='email' placeholder='username@gmail.com'><br><br>
+        <label>Password</label><input required type='password' name='password' placeholder='********'><br><br>
+        <label>Phone number</label><input required type='number' name='phone' placeholder='+254________'><br><br>
+        <label id='xd' onclick='login()' >Back to login?</label>
+        <button name='signup' value='signup' id='submit'>Signup</button>
+        </form>
+        </div>
+        </center>
+        </div>
+<script>
+        function signup(){
+    var signup=document.getElementById('hhv');
+    var signin=document.getElementById('login');
+
+
+
+        signup.style.display='block';
+        signin.style.display='none';
+
+    }
+    function login(){
+        var signup=document.getElementById('hhv');
+    var signin=document.getElementById('login');
+
+
+
+        signup.style.display='none';
+        signin.style.display='block';
+    }
+</script>
+
 
 </body>
 </html>

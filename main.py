@@ -4,6 +4,7 @@ from flask import Flask,url_for,redirect,render_template,request
 app=Flask(__name__)
 app.secret_key='hey'
 
+app.config
 
 @app.route('/')
 def free():

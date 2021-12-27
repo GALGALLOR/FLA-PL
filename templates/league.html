@@ -1,6 +1,8 @@
 
 <html>
-
+<head>
+    <link rel="icon" href="FLA logo.png">
+</head>
 <style>
 
 .leaguetable table{
@@ -15,6 +17,7 @@ border:1px solid black;
 border:1px solid black;
 border-left:none;
 border-top:none;
+font-size: x-large;
 }
 
 
@@ -23,81 +26,214 @@ border-top:none;
 
 <body>
 <style>
-.navbar ul li{
-display:inline-block;
-margin:0 10px;
+
+.others a:hover{
+        background:lightpink;
+        border:1px solid lightcyan;
+    }
+    .logo img:hover{
+        border-radius: 1cm;
+
+    }
+    .logo img{
+        border-radius: 1cm;
+        transition: 1s;
+        width:70%;
+        height:20vh;
+        border:1px solid lightcyan;
+        margin-left:0;
+        left:10%;
+        position: absolute;
+    }
+    .navbar li{
+        list-style-type: none;
+        display:block;
+        margin-left: 0;
+        width:100%;
+        margin-top:1cm;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    }
+    .navbar ul{
+        width:100%;
+        margin-left:0;
+        left:-20;
+        position: absolute;
+    }
+    .navbar a{
+        padding:5px;  
+        text-decoration: none;
+        padding-left:1cm;
+        border:1px solid lightcyan;     
+        border-radius: 0.5cm;
+        transition: 0.5s;
+        width:100%;
+        padding-top:0.2cm;
+    }
+    .navbar{
+        background:lightcyan;
+        font-size: larger;
+        float:left;
+        position:fixed;
+        width:6cm;
+        height:100vh;
+    }
+    .others{
+        position:absolute;
+        top:4cm;
+    }
+    .others a{
+        margin-bottom:1cm;
+        position: relative;
+    }
+    .others li img{
+        width:0.7cm;
+ 
+    }
+    #coins,#score{
+        border:1px solid black;
+    }
+
+    .container{
+        position: absolute;
+        left:6cm;
+        padding-top:1cm;
+        padding-left:1cm;
+        width:50%;
+        transition: 1s;
+    }
+    .container2{
+        float:right;
+        background:rgb(126, 226, 218);
+        width:50%;
+        padding:1cm;
+        position:absolute;
+        right:-60%;
+        top:0;
+        transition: 1s;
+
+    }
+    .container2 .setty{
+        margin-left:0.5s;
+        border:1px solid black;
+        padding:5px;
+        border-radius:10px;
+
+    }
+    .container2 .setty:hover{
+        color:blue;
+        background: white;
+        width:100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    #simba{
+        background:red;
+        color:white;
+    }
+    #ndovu{
+        background:yellow;
+        color:white;
+
+    }
+    #nyati{
+        background:green;
+        color:white;
+        margin-left:0.2cm;
+    }
+    #chui {
+        background:blue;
+        color:white;
+    }
+    .container2 label{
+        margin-top:1cm;
+        position:relative;
+    }
+    .date{
+        text-decoration: underline;
+        font-size: xx-large;
+    }
+    .image img{
+        width:100%;
+        height:70vh;
+        transition: 1s;
+        animation: 1s;
+    }
+    .news h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color:#699;
+        text-decoration: underline;
+
+    }
+    .results{
+        font-size: xx-large;
+        font-family: sans-serif;
+    }
+    .hk{
+        background:rgb(24, 141, 209);
+        padding:10px;
+        border-radius:1cm;
+    }
+    a{
+        text-decoration:none;
+    }
+    .container .leaguetable{
+        width: 100%;
+    }  
+    table{
+        width: 100%;
+    }
+    #crown{
+        width:25px;
+        position:absolute;
+    }
+    #winner{
+        background:yellow;
+    }
+    *{
+        text-transform: uppercase;
+    }
 
 
-}
-.navbar img{
-float:left;
-width:15%;
-border-radius:1cm;
-}
-
-.navbar ul{
-float:left;
-margin-right:05%;
-position:relative;
-}
-.navbar a{
-color:black;
-text-decoration:none;
-border:1px solid white;
-border-radius:10px;
-padding:2px;
-}
-.navbar a:hover{
-border:1px solid blue;
-background:blue;
-color:white;
-}
 </style>
 
 
-
-<div class='navbar'>
-<img src='0c962934d5bd16b9c91cdf9f08e3b203.jpg' id='logo'>
-<ul> 
-
-
-<li><a href='#'>Home</a></li>
-<li><a href='#'>Points</a></li>
-<li><a href='#'>League</a></li>
-<li><a href='#'>Coins</a></li>
-<li><a href='#'>Username</a></li>
-<li><a href='#'>Settings</a></li>
-
-</ul>
-
+<div class="navbar">
+    <ul>
+        <span class="logo">
+            <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
+        </span>
+        <span class="others">
+            <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
+            <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
+            <li><a href="league.html"> <span id='league' ></span> League</a></li>
+            <li><a href="team.html"> <img src="coins.png" alt=""> <span id='coins' >51</span> Coins</a></li>
+            <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
+            <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
+        </span>
+    </ul>
 </div>
-<hr>
+<div class="container">
 <div class='leaguetable' >
 
 
 <table>
 <tr><th>Team Name</th><th>Points</th></tr>
-<tr><td>1. Masquody</td> <td>10</td></tr>
-<tr><td>2. Milanos</td>  <td>9</td></tr>
-<tr><td>3. Onetouch</td> <td>8</td></tr>
-<tr><td>4. Payern</td>   <td>7</td></tr>
+<tr id='winner' ><td> 1. . 
+    <img id='crown' src="https://media.istockphoto.com/vectors/prom-crown-icon-on-transparent-background-vector-id1283621184?k=20&m=1283621184&s=170667a&w=0&h=QDKKu214swaBGS5WGV-rWFw_qFn5YbxGbnHd8NlqhfM=" alt="">
+    .....  Masquody
+</td> <td>10</td></tr>
+<tr><td>2.  Milanos</td>  <td>9</td></tr>
+<tr><td>3.  Onetouch</td> <td>8</td></tr>
+<tr><td>4.  Payern</td>   <td>7</td></tr>
 </table>
 
 
 
-<table>
-<tr> <th>Team Name</th> <th>Points</th> </tr>
-{%for team in teams%}
-<tr><td>{{team[0]}}</td><td>{{team[1]}}</td></tr>
-{%endfor%}
-
-<!-- Team[0] is teamname while team[1] is points -->
-
-</table>
 
 </div>
 
-
+</div>
 
 </body>
 

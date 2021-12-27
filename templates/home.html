@@ -56,6 +56,7 @@
         position:fixed;
         width:6cm;
         height:100vh;
+        text-transform: uppercase;
     }
     .others{
         position:absolute;
@@ -80,7 +81,6 @@
         padding-left:1cm;
         width:50%;
         transition: 1s;
-        margin-top:3cm;
     }
     .container2{
         float:right;
@@ -132,6 +132,7 @@
     }
     .date{
         text-decoration: underline;
+        font-size: xx-large;
     }
     .image img{
         width:100%;
@@ -139,8 +140,22 @@
         transition: 1s;
         animation: 1s;
     }
+    .news h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color:#699;
+        text-decoration: underline;
 
-
+    }
+    .results{
+        font-size: xx-large;
+        font-family: sans-serif;
+    }
+    .hk{
+        background:rgb(24, 141, 209);
+        padding:10px;
+        border-radius:1cm;
+    }
+    
     
 
 
@@ -148,20 +163,21 @@
 
 <html>
     <head>
+        <link rel="icon" href="FLA logo.png">
     </head>
     <body>
         <div class="navbar">
             <ul>
                 <span class="logo">
-                    <a href=""><img src="FLA logo.png" alt="Logo"></a>
+                    <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
                 </span>
                 <span class="others">
-                    <li> <a href="#"> <img src="home.png" alt="">  Home</a></li>
-                    <li><a href="#"> <span id='score'>35</span> points</a></li>
-                    <li><a href="#"> <span id='league' >609</span> League</a></li>
-                    <li><a href="#"> <img src="coins.png" alt=""> Coins</a></li>
-                    <li><a href="#"> <img src="username.png" alt=""> Galgallo</a></li>
-                    <li><a href="#"> <img src="settings.png" alt=""> settings</a></li>
+                    <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
+                    <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
+                    <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
+                    <li><a href="transfers.html"> <img src="coins.png" alt=""> Coins</a></li>
+                    <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
+                    <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
                 </span>
             </ul>
         </div>
@@ -169,43 +185,28 @@
 
             <div class="update">
                 <div class="date">
-                    23/02/2022
+                    <span id='date' ></span>
                 </div>
                 <div class="news">
-                    <h1>🎉Spicy Keith scores a FreeKick banger🥂</h1>
+                    <h1>{{title}}</h1>
                 </div>
                 <span class='image' >
-                <img  onmouseover="on()" onmouseout="off()"  id='kindpng_5757' src="kindpng_5855552.png" alt=""></span>
+                <img  onmouseover="on()" onmouseout="off()"  id='{{img}}' src="{{img}}" alt=""></span>
                 <script>
                     function on(){
-                        document.getElementById('kindpng_57583').src="redcard.png";
+                        document.getElementById('{{img}}').src="{{img2}}";
                     }
                     function off(){
-                        document.getElementById('kindpng_57893').src='kindpng_5855552.png';
+                        document.getElementById('{{img2}}').src='{{img}}';
+                        
                     }
+
+                    document.getElementById("date").innerHTML = '{{date}}';
                 </script>
                 <hr>
-                <div class="update">
-                    <div class="date">
-                        23/02/2022
-                    </div>
-                    <div class="news">
-                        <h1>🎉Spicy Keith scores a FreeKick banger🥂</h1>
-                    </div>
-                    <span class='image' >
-                    <img  onmouseover="on()" onmouseout="off()"  id='yes' src="kindpng_5855552.png" alt=""></span>
-                    <script>
-                        function on(){
-                            document.getElementById('yes').src="redcard.png";
-                        }
-                        function off(){
-                            document.getElementById('yes').src='kindpng_5855552.png';
-                        }
-                    </script>
-                    <hr>
 
 
-        </div>
+
         <div class="container2">
             <div class="games">
                 <br>
@@ -221,7 +222,7 @@
                 <label><span class='setty' id='Nyati' >Nyati</span></label></h3>
                 <br><br>
                 <div class="date">
-                    22/02/2022
+                    <span id='date'>{{date}}</span>
                 
                 <br>
                 <br>
@@ -230,10 +231,14 @@
                 <br>
 
                 <br>
-                3A |3-0| 3C<br><br>
-                3D |5-1| 3E<br><br>
-                Ndovu |2-0| Nyati<br><br>
+                <div class="results">
+                {{team1}} | <span class='hk' >{{team1score}}</span> - <span class='hk' >{{team2score}}</span> | {{team2}}<br><br>
+                {{team3}} | <span class='hk' >{{team3score}}</span> - <span class='hk' >{{team4score}}</span> | {{team4}}<br><br>
+                {{team5}} | <span class='hk' >{{team5score}}</span> - <span class='hk' >{{team6score}}</span> | {{team6}}<br><br>
+                </div>
             </div>
+        </div>
+        <div class="container3">
         </div>
     </body>
 </html>

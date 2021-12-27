@@ -1,57 +1,437 @@
-
 <html>
+    <head>
+        <link rel="icon" href="FLA logo.png">
+    </head>
+    <body>
+        <style>
+            .field{
+                font-family: cursive;
+                background:green;
+                width:70%;
+                position:absolute;
+                height:80%;
+                margin-left:10%;
+                border:1px solid white;
+                text-align: center;
+            }
+            .gk{
+                border: 1px solid rgb(255, 255, 255);
+                width:20%;
+                position: relative;
+                left:40%;
+                height:10%;
+            }
+            .dee{
+                height:100px;
+                border:1px solid rgb(255, 255, 255);
+                margin-top:-52px;
+                position: static;
+                width:40%;
+                margin-left:30%;
+            }
+            .half{
+                border-top: 1px solid white;
+                position:absolute;
+                top:90%;
+                height: 50%;
+                width:100%;
+            }
+            .defenders{
+                width:100%;
+                position:absolute;
+                top:25%;
+            }
 
-<style>
-.field{
+            .defenders label{
+                margin-left:4%;
+                border:1px solid white;
+                border-radius:1cm;
+                padding:5px;
+            }
+            .center{
+                position:absolute;
+                left:45%;
+                border:1px solid white;
+                padding:1cm;
+                border-radius: 1cm;
+                top:82.5%;
+            }
+            .field label{
+                border:1px solid white;
+                border-radius:1cm;
+                padding:10px;
 
-text-align:center;
-margin-top:20%;
+            }
+            .midfielders{
+                position:absolute;
+                top:40%;
+                width:100%;
+            }
+            .midfielders label{
+                margin-left:5%;
+            }
+            .attack{
+                top:60%;
+                position: absolute;
+                width:100%;
+            }
+            .attack label{
+                margin-left:5%;
+            }
+            .subs{
+                top:120%;
+                position: absolute;
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                width:100%;
+                }
+            .subs label{
+                text-align: center;
+                margin-left:40%;
+                padding:10px;
+                border:1px solid brown;
+                border-radius: 1cm;
+            }
+            body{
+                background: radial-gradient(rgb(233, 233, 233),green) no-repeat;
+                width:100%;
+                height:200%;
+            }
+
+            .subs h1{
+                text-decoration: underline;
+                text-align: center;
+            }
+
+            .field{
+                top:6cm;
+            }
+            .container label:hover{
+                background:rgb(3, 78, 3);
+                cursor: pointer;
+
+            }
+            .keeper label{
+                position:relative;
+                top:0.5cm;
+            }
+
+            .faces{
+                position: relative;
+                width:15%;
+                margin-right:4.5%;
+                height:15cm;
+                border:1px solid rgb(172, 172, 172);
+                float:right;
+                top:5.8cm;
+                border-radius: 1cm;
+            }
+            .faces img{
+                width:100%;
+                background: grey;
+                border-radius: 1cm;
+            }
+            .faces #ll{
+                background: green;
+                border-radius: 20px;
+                padding:5px;
+            }
+            .faces label{
+                margin-top:1cm;
+            }
+            .faces label:hover{
+                background: none;
+            }
+
+
+
+
+            
+
+
+
+
+
+
+
+            .navbar{
+                position: absolute;
+
+            }
+            .logo img{
+                width:4.5cm;
+            }
+            .navbar li img{
+                width:0.7cm;
+            }
+            .navbar ul li{
+                list-style: none;
+                display: inline-block;
+
+            }
+            .others{
+                position:absolute;
+                top:2cm;
+            }
+            .navbar{
+                height:5cm;
+                top:0;
+                text-transform: uppercase;
+                left:0;
+                background: lightseagreen;
+                font-family: fantasy;
+                color:rgb(88, 5, 114);
+                width:100%;
+                border: 1px solid black;
+            }
+            .navbar ul li a{
+                margin-left:1cm;
+                border-radius: 1cm;
+                padding:10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover{
+                background:lightslategray;
+            }
+            a{
+                text-decoration: none;
+            }
+
+
+                        
+        </style>
+                <div class="navbar">
+                    <ul>
+                        <span class="logo">
+                            <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
+                        </span>
+                        <span class="others">
+                            <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
+                            <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
+                            <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
+                            <li><a href="transfers.html"> <img src="coins.png" alt=""> Coins</a></li>
+                            <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
+                            <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
+                        </span>
+                    </ul>
+                </div>
+        <div class="container">
+            <div class="field">
+                <div class="gk">
+                    <span class='keeper' ><label for='marwa' id='Lilroy Marwa' >Lilroy Marwa</label></span>
+                </div>
+                <div class="dee"></div>
+                <div class="defenders">
+                    <span class="lb">  <label for='abdul' >Abdulkhaliq Ahmed </label> </span>
+                    <span class="cb2"> <label for='galo' >Galgallo Roba</label> </span>
+                    <span class="cb3"> <label for='waikwa' >Sean Waikwa</label> </span>
+                    <span class="rb">  <label for='spicy' >Spicy Keith </label> </span>
+                </div>
+                <div class="midfielders">
+                    <span class="mid10"><label for='kuria' >Kuria Muriithi</label></span>
+                    <span class="cdm"><label   for='ryan' >Ryan Kimani</label></span>
+                    <span class="mid8"><label  for='hamza' >Hamza Abdirazak</label></span>
+                </div>
+                
+                <div class="attack">
+                    <span class="st"><label for="bricole">Bricole Asiachi</label></span>
+                    <span class="st"><label for="mahat">Mahat Masoud</label></span>
+
+                </div>
+                <div class="half"></div>
+                <div class="center"></div>
+            </div>
+            <div class="subs">
+                <h1>Subs</h1>
+                <label for="achuu">Abubakar Ismail</label><br><br><br>
+                <label for="soja">Jamal Abdinasir</label><br><br><br>
+                <label for="suhayb">Suhayb omar</label><br><br><br>
+            </div>
+            <div class="faces">
+                <div class="name">
+                    <img src="https://cdn2.iconfinder.com/data/icons/soccer-players/100/color-24-512.png" alt="">
+                    <label >NAME: <span id='llname' >GALGALLO ROBA</span></label><br><br>
+                    <label >AGE : <span  id='llage'> 21 </span> </label><br><br>
+                    <label > ROLE : <span id='llrole' > CB  </span> </label><br><br>
+                    <label>TEAM : <span id='llteam' >3A</span></label><br><br>
+                    <label> HOUSE : <span id='llhouse' >SIMBA</span> </label><br><br>
+                    <label > POINTS : <span id='llpoints' > 51  </span> </label><br><br>
+                    <label > WORTH : $ <span id='llworth' > 50  </span> </label><br><br>
+                    <button value='galgallo' name='SELL' > SELL </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="checkbox">
+            <input onclick='view1()'  type="radio" value="marwa"   name="sell" id="marwa"   >
+            <input onclick='view2()'  type="radio" value="abdul"   name="sell" id="abdul"   >
+            <input onclick='view3()'  type="radio" value="galo"    name="sell" id="galo"    >
+            <input onclick='view4()'  type="radio" value="waikwa"  name="sell" id="waikwa"  >
+            <input onclick='view5()'  type="radio" value="spicy"   name="sell" id="spicy"   >
+            <input onclick='view6()'  type="radio" value="kuria"   name="sell" id="kuria"   >
+            <input onclick='view7()'  type="radio" value="hamza"   name="sell" id="hamza"   >
+            <input onclick='view8()'  type="radio" value="depay"   name="sell" id="depay"   >
+            <input onclick='view9()'  type="radio" value="bricole" name="sell" id="bricole" >
+            <input onclick='view10()'  type="radio" value="mahat"  name="sell" id="mahat"   >
+
+            <input onclick='view11()' type="checkbox" name="sell" id="sub1">
+            <input onclick='view12()' type="checkbox" name="sell" id="sub2">
+            <input onclick='view13()' type="checkbox" name="sell" id="sub2">
+
+        </div>
+        <script>
+                var namex=document.getElementById('llname');
+                var age=document.getElementById('llage');
+                var role=document.getElementById('llrole');
+                var team=document.getElementById('llteam');
+                var house=document.getElementById('llhouse');
+                var points=document.getElementById('llpoints');
+                var worth=document.getElementById('llworth');
+                
+            function view1(){
+
+                namex  .innerHTML  ='marwa';
+                age   .innerHTML  ='19';
+                role  .innerHTML  ='GK';
+                team  .innerHTML  ='3C';
+                house .innerHTML  = 'nyati';
+                points.innerHTML  ='47';
+                worth .innerHTML  ='27';
+
+            }
+            function view2(){
+
+namex  .innerHTML  ='majgjhvrwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
 }
-.subs{
-float:right;
-margin-right:5%;
+function view3(){
+
+namex  .innerHTML  ='marw0000a';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
 }
-.team input:
-</style>
+function view4(){
 
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
 
-<body>
+}
+function view5(){
 
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
 
+}
+function view6(){
 
-<div class='team'>
-<div class='field'>
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
 
-<div class='attack'>
-<input type='radio' name='select' id='player2' value='player2'  ><label for='player2'>Player2</label>
-<input type='radio' name='select' id='player3' value='player3' ><label for='player3'>Player3</label>
-<input type='radio' name='select' id='player4' value='player4' ><label for='player4'>Player4</label>
-</div>
-<br>
-<div class='mid'>   
-<input type='radio' name='select'  id='player5' value='player5' ><label for='player5'>Player5</label>
-<input type='radio' name='select'  id='player6' value='player6' ><label for='player6'>Player6</label>
-<input type='radio' name='select'  id='player7' value='player7' ><label for='player7'>Player7</label>
-</div>
-<br>
-<div class='def'>
-<input type='radio' name='select'  id='player8' value='player8' ><label for='player8'>Player8</label>
-<input type='radio' name='select'  id='player9' value='player9' ><label for='player9'>Player9</label>
-<input type='radio' name='select'  id='player10' value='player10' ><label for='player10'>Player10</label>
-<input type='radio' name='select'  id='player11' value='player11'  ><label for='player11'>Player11</label>
-</div>
-<br>
-<div class='gk'>
-<input type='radio' name='select'  id='player1'  ><label for='player1'>Player1</label>
-</div>
-</div><br><br>
-<div class='subs'>
-<input type='radio' name='select'  id='sub1'  ><label for='sub1'>sub1</label><br>
-<input type='radio' name='select'  id='sub2'  ><label for='sub2'>sub2</label> <br>
-<input type='radio' name='select'  id='sub3'  ><label for='sub3'>sub3</label> <br>
-<input type='radio' name='select'  id='sub4'  ><label for='sub4'>sub4</label> <br>
-<input type='radio' name='select'  id='sub5'  ><label for='sub5'>sub5</label> <br>
-</div>
-</div>
+}
+function view7(){
 
-</body>
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+function view8(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+function view9(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+alert(worth)
+
+}
+function view10(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+function view11(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+function view12(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+function view13(){
+
+namex  .innerHTML  ='marwa';
+age   .innerHTML  ='19';
+role  .innerHTML  ='GK';
+team  .innerHTML  ='3C';
+house .innerHTML  = 'nyati';
+points.innerHTML  ='47';
+worth .innerHTML  ='27';
+
+}
+
+        </script>
+    </body>
+</html>

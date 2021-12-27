@@ -1,14 +1,9 @@
-
-
-
-
-
 <html>
     <head>
         <link rel="icon" href="FLA logo.png">
     </head>
-<style>
-    .others a:hover{
+    <style>
+            .others a:hover{
         background:lightpink;
         border:1px solid lightcyan;
     }
@@ -56,8 +51,8 @@
         float:left;
         position:fixed;
         width:6cm;
-        text-transform: uppercase;
         height:100vh;
+        text-transform: uppercase;
     }
     .others{
         position:absolute;
@@ -156,65 +151,27 @@
         padding:10px;
         border-radius:1cm;
     }
-    a{
-        text-decoration:none;
-    }
-    .transfers a{
-        font-size: xx-large;
-        text-transform: uppercase;
-        text-decoration: underline;
-    }
-    .team a{
-        font-size: xx-large;
-        text-transform: uppercase;
-        text-decoration: underline;
-    }
-    .league{
-        text-transform: uppercase;
-        font-size: xx-large;
-    }
     
-    
-
-
-</style>
-
-<body>
-    <div class="navbar">
-        <ul>
-            <span class="logo">
-                <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
-            </span>
-            <span class="others">
-                <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
-                <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
-                <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
-                <li><a href="team.html"> <img src="coins.png" alt=""> Coins</a></li>
-                <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
-                <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
-            </span>
-        </ul>
-    </div>
-
-
-<div class="container">
-<div class='league'>
-<u><b><a href="league.html">League</a></b></u><br>
-Pos:609   <br>
-team:Lapobo<br>
-Points:51<br>
-
-</div>
-
-<div class='transfers'>
-<br>
-<a href='transfers.html'> transfers</a><br><br>
-</div>
-<div class="team">
-<a href='team.html'>Team</a>
-</div>
-</div>
-</body>
-
-
+    </style>
+    <body>
+        <div class="navbar">
+            <ul>
+                <span class="logo">
+                    <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
+                </span>
+                <span class="others">
+                    <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
+                    <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
+                    <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
+                    <li><a href="transfers.html"> <img src="coins.png" alt=""> Coins</a></li>
+                    <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
+                    <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
+                </span>
+            </ul>
+        </div>
+        <div class="container">
+            
+        </div>
+        
+    </body>
 </html>
