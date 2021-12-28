@@ -1,0 +1,92 @@
+
+
+
+
+
+<html>
+    <head>
+
+    </head>
+    <style>
+                    .navbar{
+                position: absolute;
+
+            }
+            .logo img{
+                width:4.5cm;
+            }
+            .navbar li img{
+                width:0.7cm;
+            }
+            .navbar ul li{
+                list-style: none;
+                display: inline-block;
+
+            }
+            .others{
+                position:absolute;
+                top:2cm;
+            }
+            .navbar{
+                height:5cm;
+                top:0;
+                text-transform: uppercase;
+                left:0;
+                background: lightseagreen;
+                font-family: fantasy;
+                color:rgb(88, 5, 114);
+                width:100%;
+                border: 1px solid black;
+            }
+            .navbar ul li a{
+                margin-left:1cm;
+                border-radius: 1cm;
+                padding:10px;
+                transition: 0.5s;
+                color:rgb(80, 46, 173);
+            }
+            .navbar ul li a:hover{
+                background:lightslategray;
+            }
+            a{
+                text-decoration: none;
+            }
+            #lo{
+                background:grey;
+                color:rgb(31, 11, 11);
+                font-family: fantasy;
+            }
+            .container{
+                position: relative;
+                margin-top:5cm;
+                margin-left:2cm;
+                font-family: fantasy;
+            }
+    </style>
+    <body>
+        <div class="navbar">
+            <ul>
+                <span class="logo">
+                    <a href="home.html"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
+                </span>
+                <span class="others">
+                    <li> <a href="/home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
+                    <li><a href="/league"> <span id='score'> {{points}} </span> points</a></li>
+                    <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
+                    <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+                    <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
+                    <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
+                </span>
+            </ul>
+        </div>
+        <div class="container">
+            <form method='post'>
+            <h1>Enter Team name</h1>
+            <input type="text" name='teamname' placeholder='TeamName' >
+
+
+
+            </form>
+        </div>
+    </body>
+</html>

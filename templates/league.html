@@ -1,7 +1,7 @@
 
 <html>
 <head>
-    <link rel="icon" href="FLA logo.png">
+    <link rel="icon" href="{{url_for('static',filename='FLA logo.png')}}">
 </head>
 <style>
 
@@ -184,8 +184,10 @@ font-size: x-large;
         width: 100%;
     }
     #crown{
-        width:25px;
+        width:35px;
         position:absolute;
+        top:2.9cm;
+        height:0.8cm;
     }
     #winner{
         background:yellow;
@@ -201,15 +203,15 @@ font-size: x-large;
 <div class="navbar">
     <ul>
         <span class="logo">
-            <a href="/home"><img src="FLA logo.png" alt="Logo"></a>
+            <a href="/home"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
         </span>
         <span class="others">
-            <li> <a href="home"> <img src="home.png" alt="">  Home</a></li>
+            <li> <a href="home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
             <li><a href="/team"> <span id='score'> {{points}} </span> points</a></li>
             <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
-            <li><a href="/transfers"> <img src="coins.png" alt=""> Coins</a></li>
-            <li><a href="/accounts"> <img src="username.png" alt=""> {{username}}</a></li>
-            <li><a href="/settings"> <img src="settings.png" alt=""> settings</a></li>
+            <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+            <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
+            <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
         </span>
     </ul>
 </div>
@@ -218,14 +220,20 @@ font-size: x-large;
 
 
 <table>
-<tr><th>Team Name</th><th>Points</th></tr>
-<tr id='winner' ><td> 1. . 
-    <img id='crown' src="https://media.istockphoto.com/vectors/prom-crown-icon-on-transparent-background-vector-id1283621184?k=20&m=1283621184&s=170667a&w=0&h=QDKKu214swaBGS5WGV-rWFw_qFn5YbxGbnHd8NlqhfM=" alt="">
-    .....  Masquody
-</td> <td>10</td></tr>
-<tr><td>2.  Milanos</td>  <td>9</td></tr>
-<tr><td>3.  Onetouch</td> <td>8</td></tr>
-<tr><td>4.  Payern</td>   <td>7</td></tr>
+<tr><th>RANK</th><th>Team Name</th><th>Points</th></tr>
+{%for team in teams%}
+{%if team[2] == 1%}
+<tr id='winner'>
+    
+    <td>    <img id='crown' 
+        src="https://media.istockphoto.com/vectors/prom-crown-icon-on-transparent-background-vector-id1283621184?k=20&m=1283621184&s=170667a&w=0&h=QDKKu214swaBGS5WGV-rWFw_qFn5YbxGbnHd8NlqhfM="
+         alt=""></td>
+    {%else%}
+    <td>{{team[2]}}</td>
+    {%endif%}
+    <td>{{team[0]}}
+</td> <td>{{team[1]}}</td></tr>
+{%endfor%}
 </table>
 
 

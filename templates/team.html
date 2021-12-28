@@ -1,8 +1,8 @@
 <html>
     <head>
-        <link rel="icon" href="FLA logo.png">
+        <link rel="icon" href="{{url_for('static',filename='FLA logo.png')}}">
     </head>
-    <body>
+    <body >
         <style>
             .field{
                 font-family: cursive;
@@ -122,7 +122,7 @@
                 height:15cm;
                 border:1px solid rgb(172, 172, 172);
                 float:right;
-                top:5.8cm;
+                top:3cm;
                 border-radius: 1cm;
             }
             .faces img{
@@ -188,12 +188,18 @@
                 border-radius: 1cm;
                 padding:10px;
                 transition: 0.5s;
+                color:rgb(80, 46, 173);
             }
             .navbar ul li a:hover{
                 background:lightslategray;
             }
             a{
                 text-decoration: none;
+            }
+            #lo{
+                background:grey;
+                color:rgb(31, 11, 11);
+                font-family: fantasy;
             }
 
 
@@ -202,39 +208,44 @@
                 <div class="navbar">
                     <ul>
                         <span class="logo">
-                            <a href="home.html"><img src="FLA logo.png" alt="Logo"></a>
+                            <a href="home.html"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
                         </span>
                         <span class="others">
-                            <li> <a href="home.html"> <img src="home.png" alt="">  Home</a></li>
-                            <li><a href="league.html"> <span id='score'> {{points}} </span> points</a></li>
-                            <li><a href="league.html"> <span id='league' > {{league}} </span> League</a></li>
-                            <li><a href="transfers.html"> <img src="coins.png" alt=""> Coins</a></li>
-                            <li><a href="accounts.html"> <img src="username.png" alt=""> {{username}}</a></li>
-                            <li><a href="settings.html"> <img src="settings.png" alt=""> settings</a></li>
+                            <li> <a href="/home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
+                            <li><a href="/league"> <span id='score'> {{points}} </span> points</a></li>
+                            <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
+                            <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+                            <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
+                            <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
                         </span>
                     </ul>
                 </div>
         <div class="container">
             <div class="field">
                 <div class="gk">
-                    <span class='keeper' ><label for='marwa' id='Lilroy Marwa' >Lilroy Marwa</label></span>
+                    {%for goalie in goalkeepers%}
+                    <span class='keeper' ><label for='{{goalie[0]}}' >{{goalie[0]}}</label></span>
+                    {%endfor%}
                 </div>
                 <div class="dee"></div>
                 <div class="defenders">
-                    <span class="lb">  <label for='abdul' >Abdulkhaliq Ahmed </label> </span>
-                    <span class="cb2"> <label for='galo' >Galgallo Roba</label> </span>
-                    <span class="cb3"> <label for='waikwa' >Sean Waikwa</label> </span>
-                    <span class="rb">  <label for='spicy' >Spicy Keith </label> </span>
+                    {%for defender in defenders%}
+                    <span class="lb">  <label for='{{defender[0]}}' >{{defender[0]}}</label> </span>
+                    {%endfor%}
+
                 </div>
                 <div class="midfielders">
-                    <span class="mid10"><label for='kuria' >Kuria Muriithi</label></span>
-                    <span class="cdm"><label   for='ryan' >Ryan Kimani</label></span>
-                    <span class="mid8"><label  for='hamza' >Hamza Abdirazak</label></span>
+                    {%for midfielder in midfielders%}
+
+                    <span class="mid10"><label for='{{midfielder[0]}}' >{{midfielder[0]}}</label></span>
+                    {%endfor%}
                 </div>
                 
                 <div class="attack">
-                    <span class="st"><label for="bricole">Bricole Asiachi</label></span>
-                    <span class="st"><label for="mahat">Mahat Masoud</label></span>
+                    {%for attacker in attackers%}
+                    <span class="st"><label for="{{attacker[0]}}">{{attacker[0]}}</label></span>
+                    {%endfor%}
+
 
                 </div>
                 <div class="half"></div>
@@ -242,43 +253,70 @@
             </div>
             <div class="subs">
                 <h1>Subs</h1>
-                <label for="achuu">Abubakar Ismail</label><br><br><br>
-                <label for="soja">Jamal Abdinasir</label><br><br><br>
-                <label for="suhayb">Suhayb omar</label><br><br><br>
+                {%for sub in substitutes%}
+                <label for="{{sub[0]}}">{{sub[0]}}</label><br><br><br>
+                {%endfor%}
+
             </div>
-            <div class="faces">
+            <div id='faces' class="faces">
                 <div class="name">
                     <img src="https://cdn2.iconfinder.com/data/icons/soccer-players/100/color-24-512.png" alt="">
-                    <label >NAME: <span id='llname' >GALGALLO ROBA</span></label><br><br>
-                    <label >AGE : <span  id='llage'> 21 </span> </label><br><br>
-                    <label > ROLE : <span id='llrole' > CB  </span> </label><br><br>
-                    <label>TEAM : <span id='llteam' >3A</span></label><br><br>
-                    <label> HOUSE : <span id='llhouse' >SIMBA</span> </label><br><br>
-                    <label > POINTS : <span id='llpoints' > 51  </span> </label><br><br>
-                    <label > WORTH : $ <span id='llworth' > 50  </span> </label><br><br>
-                    <button value='galgallo' name='SELL' > SELL </button>
+                    <label >NAME: <span id='llname' ></span></label><br><br>
+                    <label >AGE : <span  id='llage'>  </span> </label><br><br>
+                    <label > ROLE : <span id='llrole' >   </span> </label><br><br>
+                    <label>TEAM : <span id='llteam' ></span></label><br><br>
+                    <label> HOUSE : <span id='llhouse' ></span> </label><br><br>
+                    <label > POINTS : <span id='llpoints' >   </span> </label><br><br>
+                    <label > WORTH : $ <span id='llworth' >   </span> </label><br><br>
+                    <form action='/team' method="post">
+                    <button value='sell' name='submit' > SELL </button><br>
 
+                    <br><hr>
+
+                    <label >SUB IN: </label>
+                    <select name="substitute" id="substitute">
+                        <option value=""></option>
+                        {%for sub in substitutes%}
+                        <option value="{{sub[0]}}">{{sub[0]}}</option>
+                        {%endfor%}
+                    </select><br>
+                    <label for="">SUB OUT: </label>
+                    <select name="on" id="on">
+                        <option value=""></option>
+                        {%for player in playing%}
+                        <option value="{{player[0]}}">{{player[0]}}</option>
+                        {%endfor%}
+                    </select>
+                    <button name='submit' value='substitute' >SUBSTITUTE</button>
+                
+                    
                 </div>
             </div>
+
+
         </div>
+
+
         <div class="checkbox">
-            <input onclick='view1()'  type="radio" value="marwa"   name="sell" id="marwa"   >
-            <input onclick='view2()'  type="radio" value="abdul"   name="sell" id="abdul"   >
-            <input onclick='view3()'  type="radio" value="galo"    name="sell" id="galo"    >
-            <input onclick='view4()'  type="radio" value="waikwa"  name="sell" id="waikwa"  >
-            <input onclick='view5()'  type="radio" value="spicy"   name="sell" id="spicy"   >
-            <input onclick='view6()'  type="radio" value="kuria"   name="sell" id="kuria"   >
-            <input onclick='view7()'  type="radio" value="hamza"   name="sell" id="hamza"   >
+            <input onclick='view1()'  type="radio" value="MARWA LIROY"   name="sell" id="MARWA LIROY"   >
+            <input onclick='view2()'  type="radio" value="ABDULKHALIQ AHMED"   name="sell" id="ABDULKHALIQ AHMED"   >
+            <input onclick='view3()'  type="radio" value="GALGALLO ROBA"    name="sell" id="GALGALLO ROBA"    >
+            <input onclick='view4()'  type="radio" value="HAMZA ABDIRAZAK"  name="sell" id="HAMZA ABDIRAZAK"  >
+            <input onclick='view5()'  type="radio" value="KURIA  MURIITHI"   name="sell" id="KURIA MURIITHI"   >
+            <input onclick='view6()'  type="radio" value="MAHAT MASOUD"   name="sell" id="MAHAT MASOUD"   >
+            <input onclick='view7()'  type="radio" value="BRICOLE ASIACHI"   name="sell" id="BRICOLE ASIACHI"   >
+
             <input onclick='view8()'  type="radio" value="depay"   name="sell" id="depay"   >
             <input onclick='view9()'  type="radio" value="bricole" name="sell" id="bricole" >
             <input onclick='view10()'  type="radio" value="mahat"  name="sell" id="mahat"   >
 
-            <input onclick='view11()' type="checkbox" name="sell" id="sub1">
-            <input onclick='view12()' type="checkbox" name="sell" id="sub2">
-            <input onclick='view13()' type="checkbox" name="sell" id="sub2">
+            <input onclick='view11()' type="radio" name="sell" id="sub1">
+            <input onclick='view12()' type="radio" name="sell" id="sub2">
+            <input onclick='view13()' type="radio" name="sell" id="sub2">
 
         </div>
         <script>
+
                 var namex=document.getElementById('llname');
                 var age=document.getElementById('llage');
                 var role=document.getElementById('llrole');
@@ -289,149 +327,87 @@
                 
             function view1(){
 
-                namex  .innerHTML  ='marwa';
-                age   .innerHTML  ='19';
+                namex  .innerHTML  ='LIROY MARWA';
+                age   .innerHTML  ='18';
                 role  .innerHTML  ='GK';
                 team  .innerHTML  ='3C';
-                house .innerHTML  = 'nyati';
-                points.innerHTML  ='47';
-                worth .innerHTML  ='27';
+                house .innerHTML  = 'NYATI';
+                points.innerHTML  ='0';
+                worth .innerHTML  ='8';
+                
 
             }
             function view2(){
 
-namex  .innerHTML  ='majgjhvrwa';
+namex  .innerHTML  ='ABDULKHALIQ AHMED';
 age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
+role  .innerHTML  ='DEF';
+team  .innerHTML  ='3A';
+house .innerHTML  = 'SIMBA';
+points.innerHTML  ='0';
+worth .innerHTML  ='0';
 
 }
 function view3(){
 
-namex  .innerHTML  ='marw0000a';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
+namex  .innerHTML  ='GALGALLO ROBA';
+age   .innerHTML  ='18';
+role  .innerHTML  ='DEF';
+team  .innerHTML  ='3A';
+house .innerHTML  = 'SIMBA';
+points.innerHTML  ='0';
+worth .innerHTML  ='0';
 
 }
 function view4(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
+namex  .innerHTML  ='HAMZA ABDIRAZAK';
+age   .innerHTML  ='17';
+role  .innerHTML  ='MID';
+team  .innerHTML  ='3A';
+house .innerHTML  = 'NDOVU';
+points.innerHTML  ='0';
+worth .innerHTML  ='0';
 
 }
 function view5(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
+namex  .innerHTML  ='KURIA MURIITHI';
+age   .innerHTML  ='17';
+role  .innerHTML  ='MID';
+team  .innerHTML  ='3A';
+house .innerHTML  = 'CHUI';
+points.innerHTML  ='0';
+worth .innerHTML  ='0';
 
 }
 function view6(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
+namex  .innerHTML  ='MAHAT MASOUD';
+age   .innerHTML  ='18';
+role  .innerHTML  ='ATTACKER';
 team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
+house .innerHTML  = 'NDOVU';
 points.innerHTML  ='47';
 worth .innerHTML  ='27';
 
 }
 function view7(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
+namex  .innerHTML  ='BRICOLE ASIACHI';
+age   .innerHTML  ='16';
+role  .innerHTML  ='ATTACKER';
+team  .innerHTML  ='3B';
+house .innerHTML  = 'NDOVU';
 points.innerHTML  ='47';
 worth .innerHTML  ='27';
 
 }
-function view8(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
 
-}
-function view9(){
 
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-alert(worth)
-
-}
-function view10(){
-
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
-function view11(){
-
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
-function view12(){
-
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
-function view13(){
-
-namex  .innerHTML  ='marwa';
-age   .innerHTML  ='19';
-role  .innerHTML  ='GK';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'nyati';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
 
         </script>
+        </form>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="icon" href="FLA logo.png">
+        <link rel="icon" href="{{url_for('static',filename='FLA logo.png')}}">
     </head>
     <style>
     .others a:hover{
@@ -176,15 +176,15 @@
         <div class="navbar">
             <ul>
                 <span class="logo">
-                    <a href="/home"><img src="FLA logo.png" alt="Logo"></a>
+                    <a href="/home"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
                 </span>
                 <span class="others">
-                    <li> <a href="home"> <img src="home.png" alt="">  Home</a></li>
+                    <li> <a href="home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
                     <li><a href="/team"> <span id='score'> {{points}} </span> points</a></li>
                     <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
-                    <li><a href="/transfers"> <img src="coins.png" alt=""> Coins</a></li>
-                    <li><a href="/accounts"> <img src="username.png" alt=""> {{username}}</a></li>
-                    <li><a href="/settings"> <img src="settings.png" alt=""> settings</a></li>
+                    <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+                    <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
+                    <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
                 </span>
             </ul>
         </div>
@@ -200,24 +200,25 @@
                         <th>COST</th>
                         <th>TRANSACTION</th>
                     </tr>
+                    {%for name in xlo%}
                     <tr>
-                        <td>Galgallo Roba</td>
-                        <td>3A</td>
-                        <td>Simba</td>
-                        <td>CB</td>
-                        <td>51</td>
-                        <td>$35</td>
-                        <td><button value='Galgallo Roba' name='Buy' >Buy</button></td>
+                        <td>{{name[0]}}</td>
+                        <td>{{name[1]}}</td>
+                        <td>{{name[2]}}</td>
+                        <td>{{name[3]}}</td>
+                        <td>{{name[4]}}</td>
+                        <td>$ {{name[5]}}</td>
+                            <form method="post">
+                        <input checked type="checkbox" style='display:none;' name='player' value='{{name[0]}}'>
+                                {%if name[0] not in names%}
+                        <td><button value='buy' name='transaction' >buy</button></td>
+                        {%else%}
+                        <td><button value='sell' name='transaction' >sell</button></td>
+                        {%endif%}
+                        </form>
                     </tr>
-                    <tr>
-                        <td>Ali Hassan</td>
-                        <td>3D</td>
-                        <td>Simba</td>
-                        <td>CDM</td>
-                        <td>70</td>
-                        <td>$69</td>
-                        <td><button value='Ali Hassan' name='Sell' >Sell</button></td>
-                    </tr>
+                    {%endfor%}
+
 
                 </table>
             </div>
