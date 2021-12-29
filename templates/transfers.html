@@ -180,18 +180,25 @@
                 </span>
                 <span class="others">
                     <li> <a href="home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
-                    <li><a href="/team"> <span id='score'> {{points}} </span> points</a></li>
-                    <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
-                    <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+                    <li><a href="/team"> <span id='score'>  </span> TEAM</a></li>
+                    <li><a href="/league"> <span id='league' >{{points}}</span> League</a></li>
+                    <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""><span id='league' >{{coins}}</span> Coins</a></li>
                     <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
                     <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
                 </span>
             </ul>
         </div>
         <div class="container">
+            <ul>
+                <li style='color:blue; width:120%;'><h1>YOU CAN BUY A MAXIMUM OF 13 PLAYERS!</h1></li>
+                <li style='color:blue; width:120%;'><h1>YOU HAVE $100, SPEND WISELY </h1></li>
+                <li><h1>CURRENTLY YOU OWN: {{numplayers}} PLAYERS</h1></li>
+            </ul>
+            <span class='warning' style='color:red;text-transform:uppercase;' ><H1>{{message}}</H1></span>
             <div class="table">
                 <table>
                     <tr>
+                        <th>ID</th>
                         <th>PLAYER</th>
                         <th>TEAM</th>
                         <th>House</th>
@@ -202,18 +209,19 @@
                     </tr>
                     {%for name in xlo%}
                     <tr>
+                        <td>{{name[7]}}</td>
                         <td>{{name[0]}}</td>
-                        <td>{{name[1]}}</td>
-                        <td>{{name[2]}}</td>
                         <td>{{name[3]}}</td>
                         <td>{{name[4]}}</td>
-                        <td>$ {{name[5]}}</td>
+                        <td>{{name[2]}}</td>
+                        <td>{{name[5]}}</td>
+                        <td>$ {{name[6]}}</td>
                             <form method="post">
                         <input checked type="checkbox" style='display:none;' name='player' value='{{name[0]}}'>
-                                {%if name[0] not in names%}
+                        {%if name[0] not in names%}
                         <td><button value='buy' name='transaction' >buy</button></td>
                         {%else%}
-                        <td><button value='sell' name='transaction' >sell</button></td>
+                        <td><button style='background:indianred;' value='sell' name='transaction' >sell</button></td>
                         {%endif%}
                         </form>
                     </tr>

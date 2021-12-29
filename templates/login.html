@@ -1,7 +1,7 @@
 
 <html>
 <head>
-    <link rel="icon" href="FLA logo.png">
+    <link rel="icon" href="{{url_for('static',filename='FLA logo.png')}}">
 </head>
 <style>
 
@@ -79,7 +79,7 @@ button{
 <body>
 
 <div class="logo">
-    <img src="FLA logo.png" alt=""><br><br><br>
+    <img src="{{url_for('static',filename='FLA logo.png')}}" alt=""><br><br><br>
     <span class='welcome' >WELCOME TO:<br> <div class="fla">
         LIGHT ACADEMY FANTASY PREMIER LEAGUE
     </div> </span>

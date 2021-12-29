@@ -208,13 +208,13 @@
                 <div class="navbar">
                     <ul>
                         <span class="logo">
-                            <a href="home.html"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
+                            <a href="/home"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
                         </span>
                         <span class="others">
-                            <li> <a href="/home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
-                            <li><a href="/league"> <span id='score'> {{points}} </span> points</a></li>
-                            <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
-                            <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""> Coins</a></li>
+                            <li> <a href="home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
+                            <li><a href="/team"> <span id='score'></span> TEAM</a></li>
+                            <li><a href="/league"> <span id='league' > {{points}} </span> League</a></li>
+                            <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""><span id='league' >{{coins}}</span> Coins</a></li>
                             <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
                             <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
                         </span>
@@ -298,21 +298,59 @@
 
 
         <div class="checkbox">
-            <input onclick='view1()'  type="radio" value="MARWA LIROY"   name="sell" id="MARWA LIROY"   >
-            <input onclick='view2()'  type="radio" value="ABDULKHALIQ AHMED"   name="sell" id="ABDULKHALIQ AHMED"   >
-            <input onclick='view3()'  type="radio" value="GALGALLO ROBA"    name="sell" id="GALGALLO ROBA"    >
-            <input onclick='view4()'  type="radio" value="HAMZA ABDIRAZAK"  name="sell" id="HAMZA ABDIRAZAK"  >
-            <input onclick='view5()'  type="radio" value="KURIA  MURIITHI"   name="sell" id="KURIA MURIITHI"   >
-            <input onclick='view6()'  type="radio" value="MAHAT MASOUD"   name="sell" id="MAHAT MASOUD"   >
-            <input onclick='view7()'  type="radio" value="BRICOLE ASIACHI"   name="sell" id="BRICOLE ASIACHI"   >
+            <input onclick='view1()'  type="radio" value="MARWA LEROY"          name="sell" id="LEROY MARWA"   >
+            <input onclick='view2()'  type="radio"  value="SPICY KEITH"          name="sell" id="SPICY KEITH"   >
+            <input onclick='view3()'  type="radio"  value="SEAN WAIKWA"          name="sell" id="SEAN WAIKWA"            >
+            <input onclick='view4()'  type="radio"  value="CALEB GISEMBA"        name="sell" id="CALEB GISEMBA"          >
+            <input onclick='view5()'  type="radio"  value="GLEN NJAMBI"          name="sell" id="GLEN NJAMBI"            >
+            <input onclick='view6()'  type="radio"  value="LIBAN ARGATA"         name="sell" id="LIBAN ARGATA"           >
+            <input onclick='view7()'  type="radio"  value="IKOL EMMINANT"        name="sell" id="IKOL EMMINANT"          >
+            <input onclick='view8()'  type="radio"  value="AHMEDNOOR DINO"       name="sell" id="AHMEDNOOR DINO"         >
+            <input onclick='view9()'  type="radio"  value="NATHANIEL KANUS"      name="sell" id="NATHANIEL KANUS"        >
+            <input onclick='view10()'  type="radio" value="LEE MWANGI"          name="sell" id="LEE MWANGI"            >
+            <input onclick='view11()'  type="radio" value="SAID BALESA"         name="sell" id="SAID BALESA"           >
+            <input onclick='view12()'  type="radio" value="WALTER ABISAI"       name="sell" id="WALTER ABISAI"         >
+            <input onclick='view13()'  type="radio" value="SUHAYB OMAR"         name="sell" id="SUHAYB OMAR"           >
+            <input onclick='view14()'  type="radio" value="GALGALLO ROBA"       name="sell" id="GALGALLO ROBA"         >
+            <input onclick='view15()'  type="radio" value="ABDULLATIF HASSAN"   name="sell" id="ABDULLATIF HASSAN"     >
+            <input onclick='view16()'  type="radio" value="ALVIN MUITA"         name="sell" id="ALVIN MUITA"           >
+            <input onclick='view17()'  type="radio" value="MATHEW IRIMU"        name="sell" id="MATHEW IRIMU"          >
+            <input onclick='view18()'  type="radio" value="ABDULKHALIQ AHMED"   name="sell" id="ABDULKHALIQ AHMED"     >
+            <input onclick='view19()'  type="radio" value="HAMZA JUNIOR"        name="sell" id="HAMZA JUNIOR"          >
+            <input onclick='view20()' type="radio"  value="JUMA MOHAMMED"        name="sell" id="JUMA MOHAMMED"          >
+            <input onclick='view21()'  type="radio" value="ELVIS ADIKA"         name="sell" id="ELVIS ADIKA"           >
+            <input onclick='view22()'  type="radio" value="MAHAT MASOUD"        name="sell" id="MAHAT MASOUD"          >
+            <input onclick='view23()'  type="radio" value="SIDNEY SASIA"        name="sell" id="SIDNEY SASIA"          >
+            <input onclick='view24()'  type="radio" value="PETE NJAGI"          name="sell" id="PETE NJAGI"            >
+            <input onclick='view25()'  type="radio" value="IMRAN MOHAMMED"      name="sell" id="IMRAN MOHAMMED"        >
+            <input onclick='view26()'  type="radio" value="ABUBAKAR ISMAIL"     name="sell" id="ABUBAKAR ISMAIL"       >
+            <input onclick='view27()'  type="radio" value="KHALID HASSAN"       name="sell" id="KHALID HASSAN"         >
+            <input onclick='view28()'  type="radio" value="ISSA IBRAHIM"        name="sell" id="ISSA IBRAHIM"          >
+            <input onclick='view29()'  type="radio" value="JAMAL SOJA"          name="sell" id="JAMAL SOJA"            >
+            <input onclick='view30()' type="radio"  value="RYAN DEPAY"          name="sell" id="RYAN DEPAY"            >
+            <input onclick='view31()'  type="radio" value="ALI HASSAN"          name="sell" id="ALI HASSAN"            >
+            <input onclick='view32()'  type="radio" value="LILROY ISWELA"       name="sell" id="LILROY ISWELA"         >
+            <input onclick='view33()'  type="radio" value="KURIA MURIITHI"      name="sell" id="KURIA MURIITHI"        >
+            <input onclick='view34()'  type="radio" value="LEON NJUGUNA"        name="sell" id="LEON NJUGUNA"          >
+            <input onclick='view35()'  type="radio" value="ADAN MERABU"         name="sell" id="ADAN MERABU"           >
+            <input onclick='view36()'  type="radio" value="ABDIRAZAK ABDIHAKIM" name="sell" id="ABDIRAZAK ABDIHAKIM"   >
+            <input onclick='view37()'  type="radio" value="SIDNEY KAGOTA"       name="sell" id="SIDNEY KAGOTA"         >
+            <input onclick='view38()'  type="radio" value="MARK MWENDA"         name="sell" id="MARK MWENDA"           >
+            <input onclick='view39()'  type="radio" value="BRICOLE MCYNTIRE"    name="sell" id="BRICOLE MCYNTIRE"      >
+            <input onclick='view40()'  type="radio" value="JEREMIES WALTER"     name="sell" id="JEREMIES WALTER"       >
+            <input onclick='view41()'  type="radio" value="DAVID HOSEA"         name="sell" id="DAVID HOSEA"           >
+            <input onclick='view42()'  type="radio" value="JEREMY NYAGUDI"      name="sell" id="JEREMY NYAGUDI"        >
+            <input onclick='view43()'  type="radio" value="LEWIS MWAURA"        name="sell" id="LEWIS MWAURA"          >
+            <input onclick='view44()'  type="radio" value="IAN WACHIRA"         name="sell" id="IAN WACHIRA"           >
+            <input onclick='view45()'  type="radio" value="IAN STERLING"        name="sell" id="IAN STERLING"          >
+            <input onclick='view46()'  type="radio" value="MAHIR NUZRAT"        name="sell" id="MAHIR NUZRAT"          >
+            <input onclick='view47()'  type="radio" value="JEREMY KANGETHE"     name="sell" id="JEREMY KANGETHE"       >
+            <input onclick='view48()'  type="radio" value="JAMAL JUMA"          name="sell" id="JAMAL JUMA"            >
+            <input onclick='view49()'  type="radio" value="HASHIM MOHAMMED"     name="sell" id="HASHIM MOHAMMED"       >
+            <input onclick='view50()'  type="radio" value="JEFFERSON KIOKO"     name="sell" id="JEFFERSON KIOKO"       >
+            <input onclick='view51()' type="radio"  value="LEON MEITEMEI"       name="sell" id="LEON MEITEMEI"         >
 
-            <input onclick='view8()'  type="radio" value="depay"   name="sell" id="depay"   >
-            <input onclick='view9()'  type="radio" value="bricole" name="sell" id="bricole" >
-            <input onclick='view10()'  type="radio" value="mahat"  name="sell" id="mahat"   >
 
-            <input onclick='view11()' type="radio" name="sell" id="sub1">
-            <input onclick='view12()' type="radio" name="sell" id="sub2">
-            <input onclick='view13()' type="radio" name="sell" id="sub2">
 
         </div>
         <script>
@@ -325,84 +363,58 @@
                 var points=document.getElementById('llpoints');
                 var worth=document.getElementById('llworth');
                 
-            function view1(){
+function  view1(){namex  .innerHTML  ='LIROY MARWA'        ;role  .innerHTML  ='GK'        ;points.innerHTML  ='{{players[50][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NYATI';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function  view2(){namex  .innerHTML ='SPICY KEITH'         ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[46][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'SIMBA';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function  view3(){namex  .innerHTML = "SEAN WAIKWA"        ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[47][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function  view4(){namex  .innerHTML = "CALEB GISEMBA"      ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[48][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='17';}
+function  view5(){namex  .innerHTML ="GLEN NJAMBI"         ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[49][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function  view6(){namex  .innerHTML ="LIBAN ARGATA"        ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[44][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NDOVU';worth .innerHTML  ='7';age   .innerHTML  ='19';}
+function  view7(){namex  .innerHTML ="IKOL EMMINANT"       ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[38][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'NDOVU';worth .innerHTML  ='7';age   .innerHTML  ='17';}
+function  view8(){namex  .innerHTML ="AHMEDNOOR DINO"      ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[26][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='19';}
+function  view9(){namex  .innerHTML ="NATHANIEL KANUS"     ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[31][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='9';age   .innerHTML  ='19';}
+function view10(){namex  .innerHTML ="LEE MWANGI"          ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[32][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='17';}
+function view11(){namex  .innerHTML ="SAID BALESA"         ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[33][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'NYATI';worth .innerHTML  ='8';age   .innerHTML  ='17';}
+function view12(){namex  .innerHTML ="WALTER ABISAI"       ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[34][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='18';}
+function view13(){namex  .innerHTML ="SUHAYB OMAR"         ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[35][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='19';}
+function view14(){namex  .innerHTML ="GALGALLO ROBA"       ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[36][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view15(){namex  .innerHTML ="ABDULLATIF HASSAN"   ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[37][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'NYATI';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view16(){namex  .innerHTML ="ALVIN MUITA"         ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[41][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view17(){namex  .innerHTML ="MATHEW IRIMU"        ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[42][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view18(){namex  .innerHTML ="ABDULKHALIQ AHMED"   ;role  .innerHTML  ='DEF'       ;points.innerHTML  ='{{players[45][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='20';}
+function view19(){namex  .innerHTML ="HAMZA JUNIOR"        ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[20][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view20(){namex  .innerHTML ="JUMA MOHAMMED"       ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[21][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'NYATI';worth .innerHTML  ='8';age   .innerHTML  ='19';}
+function view21(){namex  .innerHTML ="ELVIS ADIKA"         ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[22][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NDOVU';worth .innerHTML  ='7';age   .innerHTML  ='18';}
+function view22(){namex  .innerHTML ="MAHAT MASOUD"        ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[3][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view23(){namex  .innerHTML ="SIDNEY SASIA"        ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[23][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view24(){namex  .innerHTML ="PETE NJAGI"          ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[24][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view25(){namex  .innerHTML ="IMRAN MOHAMMED"      ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[25][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='18';}
+function view26(){namex  .innerHTML ="ABUBAKAR ISMAIL"     ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[43][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view27(){namex  .innerHTML ="KHALID HASSAN"       ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[40][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='20';}
+function view28(){namex  .innerHTML ="ISSA IBRAHIM"        ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[39][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='8';age   .innerHTML  ='19';}
+function view29(){namex  .innerHTML ="JAMAL SOJA"          ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[30][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='8';age   .innerHTML  ='17';}
+function view30(){namex  .innerHTML ="RYAN DEPAY"          ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[29][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'NYATI';worth .innerHTML  ='9';age   .innerHTML  ='17';}
+function view31(){namex  .innerHTML ="ALI HASSAN"          ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[28][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='19';}
+function view32(){namex  .innerHTML ="LILROY ISWELA"       ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[27][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='19';}
+function view33(){namex  .innerHTML ="KURIA MURIITHI"      ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[15][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view34(){namex  .innerHTML ="LEON NJUGUNA"        ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[16][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'NDOVU';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view35(){namex  .innerHTML ="ADAN MERABU"         ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[17][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view36(){namex  .innerHTML ="ABDIRAZAK ABDIHAKIM" ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[18][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view37(){namex  .innerHTML ="SIDNEY KAGOTA"       ;role  .innerHTML  ='MIDFIELDER';points.innerHTML  ='{{players[19][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'NYATI';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view38(){namex  .innerHTML ="MARK MWENDA"         ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[0][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='17';}
+function view39(){namex  .innerHTML ="BRICOLE MCYNTIRE"    ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[1][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'NDOVU';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view40(){namex  .innerHTML ="JEREMIES WALTER"     ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[2][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'NYATI';worth .innerHTML  ='8';age   .innerHTML  ='17';}
+function view41(){namex  .innerHTML ="DAVID HOSEA"         ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[4][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'NDOVU';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view42(){namex  .innerHTML ="JEREMY NYAGUDI"      ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[5][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'NDOVU';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view43(){namex  .innerHTML ="LEWIS MWAURA"        ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[14][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view44(){namex  .innerHTML ="IAN WACHIRA"         ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[7][5]}}';team  .innerHTML  ='3A';house .innerHTML  = 'NDOVU';worth .innerHTML  ='7';age   .innerHTML  ='18';}
+function view45(){namex  .innerHTML ="IAN STERLING"        ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[6][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='19';}
+function view46(){namex  .innerHTML ="MAHIR NUZRAT"        ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[13][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='18';}
+function view47(){namex  .innerHTML ="JEREMY KANGETHE"     ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[12][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='7';age   .innerHTML  ='17';}
+function view48(){namex  .innerHTML ="JAMAL JUMA"          ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[10][5]}}';team  .innerHTML  ='3E';house .innerHTML  = 'SIMBA';worth .innerHTML  ='9';age   .innerHTML  ='18';}
+function view49(){namex  .innerHTML ="HASHIM MOHAMMED"     ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[9][5]}}';team  .innerHTML  ='3C';house .innerHTML  = 'CHUI' ;worth .innerHTML  ='9';age   .innerHTML  ='19';}
+function view50(){namex  .innerHTML ="JEFFERSON KIOKO"     ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[8][5]}}';team  .innerHTML  ='3B';house .innerHTML  = 'SIMBA';worth .innerHTML  ='8';age   .innerHTML  ='18';}
+function view51(){namex  .innerHTML ="LEON MEITEMEI"       ;role  .innerHTML    ='ATTACKER';points.innerHTML  ='{{players[11][5]}}';team  .innerHTML  ='3D';house .innerHTML  = 'SIMBA';worth .innerHTML  ='7';age   .innerHTML  ='17';}
 
-                namex  .innerHTML  ='LIROY MARWA';
-                age   .innerHTML  ='18';
-                role  .innerHTML  ='GK';
-                team  .innerHTML  ='3C';
-                house .innerHTML  = 'NYATI';
-                points.innerHTML  ='0';
-                worth .innerHTML  ='8';
-                
-
-            }
-            function view2(){
-
-namex  .innerHTML  ='ABDULKHALIQ AHMED';
-age   .innerHTML  ='19';
-role  .innerHTML  ='DEF';
-team  .innerHTML  ='3A';
-house .innerHTML  = 'SIMBA';
-points.innerHTML  ='0';
-worth .innerHTML  ='0';
-
-}
-function view3(){
-
-namex  .innerHTML  ='GALGALLO ROBA';
-age   .innerHTML  ='18';
-role  .innerHTML  ='DEF';
-team  .innerHTML  ='3A';
-house .innerHTML  = 'SIMBA';
-points.innerHTML  ='0';
-worth .innerHTML  ='0';
-
-}
-function view4(){
-
-namex  .innerHTML  ='HAMZA ABDIRAZAK';
-age   .innerHTML  ='17';
-role  .innerHTML  ='MID';
-team  .innerHTML  ='3A';
-house .innerHTML  = 'NDOVU';
-points.innerHTML  ='0';
-worth .innerHTML  ='0';
-
-}
-function view5(){
-
-namex  .innerHTML  ='KURIA MURIITHI';
-age   .innerHTML  ='17';
-role  .innerHTML  ='MID';
-team  .innerHTML  ='3A';
-house .innerHTML  = 'CHUI';
-points.innerHTML  ='0';
-worth .innerHTML  ='0';
-
-}
-function view6(){
-
-namex  .innerHTML  ='MAHAT MASOUD';
-age   .innerHTML  ='18';
-role  .innerHTML  ='ATTACKER';
-team  .innerHTML  ='3C';
-house .innerHTML  = 'NDOVU';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
-function view7(){
-
-namex  .innerHTML  ='BRICOLE ASIACHI';
-age   .innerHTML  ='16';
-role  .innerHTML  ='ATTACKER';
-team  .innerHTML  ='3B';
-house .innerHTML  = 'NDOVU';
-points.innerHTML  ='47';
-worth .innerHTML  ='27';
-
-}
 
 
 

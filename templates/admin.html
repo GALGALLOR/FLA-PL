@@ -22,7 +22,7 @@
             </form>
         </div><hr>
         <div class="playerdata">
-            <h1>PlayerData</h1>
+            <h1>SIGN PLAYER</h1>
             <form method="post">
                 <input required name='name' placeholder='Player name' type="text">
                 <input required name='age' placeholder='age' type="number">
@@ -40,7 +40,7 @@
                 <button value='playerdata' name='post' >SIGN</button>
             </form>
         </div><hr>
-        <h1>FIXTURES AND RESULTS</h1>
+        <h1>RESULTS</h1>
         <form method="post">
             <div class="fixtures">
                 <label for="">game 1</label> <input placeholder='team1' name='team1' type="text"> <input type="number" placeholder='Score1' name="score1"><br>______ <input placeholder='team2' name='team2' type="text"> <input type="number" placeholder='Score2' name="score2"><br><br><br>
@@ -48,6 +48,18 @@
                 <button name='post' value='results' >Post</button>
             </div>
         </form>
+        <h1>UPDATE PLAYER SCORES</h1>
+        <form method="post">
+            <select name="player">
+                {%for player in players%}
+                <option value="{{player}}">{{player}}</option>
+                {%endfor%}
+            </select>
+            <label for="points"></label>
+            <input type="number" name='points' placeholder='points' value='0' >
+            <button name='post' value='submit' >SUBMIT</button>
+        </form>
+
         
         </div>
     </body>

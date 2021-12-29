@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="icon" href="FLA logo.png">
+        <link rel="icon" href="{{url_for('static',filename='FLA logo.png')}}">
     </head>
     <style>
             .others a:hover{
@@ -157,20 +157,38 @@
         <div class="navbar">
             <ul>
                 <span class="logo">
-                    <a href="/home"><img src="FLA logo.png" alt="Logo"></a>
+                    <a href="/home"><img src="{{url_for('static',filename='FLA logo.png')}}" alt="Logo"></a>
                 </span>
                 <span class="others">
-                    <li> <a href="home"> <img src="home.png" alt="">  Home</a></li>
-                    <li><a href="/team"> <span id='score'> {{points}} </span> points</a></li>
-                    <li><a href="/league"> <span id='league' > {{league}} </span> League</a></li>
-                    <li><a href="/transfers"> <img src="coins.png" alt=""> Coins</a></li>
-                    <li><a href="/accounts"> <img src="username.png" alt=""> {{username}}</a></li>
-                    <li><a href="/settings"> <img src="settings.png" alt=""> settings</a></li>
+                    <li> <a href="home"> <img src="{{url_for('static',filename='home.png')}}" alt="">  Home</a></li>
+                    <li><a href="/team"> <span id='score'>  </span> TEAM</a></li>
+                    <li><a href="/league"> <span id='league' >{{points}}</span> League</a></li>
+                    <li><a href="/transfers"> <img src="{{url_for('static',filename='coins.png')}}" alt=""><span id='league' >{{coins}}</span> Coins</a></li>
+                    <li><a href="/accounts"> <img src="{{url_for('static',filename='username.png')}}" alt=""> {{username}}</a></li>
+                    <li><a href="/settings"> <img src="{{url_for('static',filename='settings.png')}}" alt=""> settings</a></li>
                 </span>
             </ul>
         </div>
         <div class="container">
+            <h1><u>PERSONAL</u></h1>
+            <button name='setting' value='logout' id='LOGOUT' >LOGOUT</button><br><br><br>
             
+            <form method="post"></form>
+            <button style='background:red; color:white;' name='setting' value='delete'>DELETE ACCOUNT</button><br><br><br>
+        </form>
+            <form method="post"></form>
+            <button style='background:red; color:white;' name='setting' value='reset' id='reset'>RESET</button><br><br><br>
+        </form>
+            <form method="post">
+            <button name='setting' value='password'>CHANGE PASSWORD</button><br><br><br>
+            </form>
+            <form method="post">
+            <label for="feedback">SEND FEEDBACK OR SUGGESTION</label><br>
+            <input name='feedback' id='feedback' placeholder='feedback' style='width:50%;height:3cm;' type="text">
+            <button name='submit' value='send'>SEND</button>
+            </form>
+
+
         </div>
         
     </body>
