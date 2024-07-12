@@ -16,9 +16,9 @@ mydb=MySQL(app)
 app.secret_key='hey'
 
 app.config['MYSQL_HOST']='localhost'
-app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']='GALGALLO10'
-app.config['MYSQL_DB']='FLAPL'
+app.config['MYSQL_USER']=''
+app.config['MYSQL_PASSWORD']=''
+app.config['MYSQL_DB']=''
 
 
 @app.route('/')
